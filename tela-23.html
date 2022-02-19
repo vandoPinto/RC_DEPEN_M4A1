@@ -1,0 +1,89 @@
+<div style="height: 72px; width: 100%; background-color: #836bff; ">
+    <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;"><img
+            style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;"
+            src="recursos/imgs/SI_H1.png"><img style="height: 73.05px; width:108.45px; margin-left:170.85px;"
+            src="recursos/imgs/SI_H2.png"><img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;"
+            src="recursos/imgs/SI_H3.png">
+    </div>
+</div>
+<div class="coluna-esquerda largura-1_1" style="width: 100%;margin-top: 70px;"></div>
+<p style="text-align: center;"><strong style="color: #004D73;"> Clique</strong> Clique nas sanfonas para saber mais
+    sobre os tipos 1 e 2 do diabetes mellitus (DM).</p>
+<img src="recursos/imgs/SI_23a.png"
+    style="margin-left: 130px;margin-top: 20px;width: 633.95px;height: 65px;cursor: pointer;"
+    class="btn animate__animated animate__backInRight" id="botao_1">
+<img src="recursos/imgs/SI_23b.png"
+    style="margin-left: 130px; margin-top: 10px; width: 633.95px; height: 65px; cursor: pointer;"
+    class="btn animate__animated animate__backInLeft" id="botao_2">
+<div>
+    <div id="janela_1"
+        style="position: relative; width: 702px; height: 310px; background-color: rgb(131, 107, 255); border-radius: 10px; flex-wrap: nowrap; margin-left: 95px; margin-top: -224px; cursor: pointer; display: none;">
+        <div style="display: flex;width: 800px;">
+            <div style="margin-top: 10px;width: 270px;padding-left: 50px;color: white;">
+                <h1 style="color: #fac900;">Tipo 1</h1>
+                <p>
+                    O sistema imunológico destrói as células do pâncreas responsáveis pela produção de insulina,
+                    mas, às
+                    vezes,
+                    tem causa
+                    desconhecida.
+                </p>
+                <p>Pouca ou nenhuma insulina é liberada na corrente sanguínea, o que prejudica a captação e
+                    utilização
+                    da
+                    glicose pelas
+                    células.</p>
+                <p>O DM tipo 1 tem sintomas clássicos que envolvem sede extrema, perda de peso e níveis elevados de
+                    glicose
+                    na
+                    urina, bem
+                    como aumento do volume urinário.</p>
+            </div>
+        </div>
+        <img src="recursos/imgs/SI_23janela1.png" style="position: absolute;top: -6px;left: 330px;width: 400px;">
+    </div>
+    <div id="janela_2"
+        style="position: relative;width: 702px;height: 310px;background-color: rgb(131, 107, 255);border-radius: 10px;flex-wrap: nowrap;margin-left: 95px;margin-top: -224px;cursor: pointer;">
+        <div style="display: flex;width: 800px;">
+            <img src="recursos/imgs/SI_23janela2.png" style="width: 350px;margin-top: -43px;">
+            <div style="margin-top: 10px;width: 270px;padding-left: 50px;color: white;">
+                <h1 style="color: #fac900;">Tipo 2</h1>
+                <p>
+                    O organismo não utiliza adequadamente a insulina produzida pelo pâncreas ou não produz uma
+                    quantidade
+                    considerada
+                    suficiente para o controle da glicemia. Com avanço da doença, é possível que o pâncreas
+                    interrompa a
+                    produção de
+                    insulina.
+                </p>
+                <p>O diagnóstico é muitas vezes tardio, pois, quando aparecem os sintomas, esses já são decorrentes
+                    das
+                    lesões
+                    causadas nos
+                    órgãos ou sistemas pela exposição contínua a uma concentração elevada de glicose.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer style="height: 39.05px; width: 100%; background-color: #836bff;"><img
+        style="height: 22.65px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png"><img
+        style="height: 22.75px; margin: 8.5px 37.05px; position: absolute; right: 0px;" src="recursos/imgs/SI_F2.png">
+</footer>
+<script>
+    $(() => {
+        let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
+        apagarJanelas();
+        let botoes = $(document).find('[id^=botao]').map((index, botao) => {
+            $(botao).click(() => {
+                apagarJanelas();
+                $(janelas[index]).fadeIn();
+            })
+        })
+        function apagarJanelas() {
+            janelas.map((index, janela) => {
+                $(janela).hide();
+            })
+        }
+    })
+</script>
